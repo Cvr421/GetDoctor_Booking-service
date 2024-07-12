@@ -1,0 +1,36 @@
+@import url(app.css);
+
+.contact-container {
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+  height: 20rem;
+  
+}
+.form-input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.apply-doctor {
+  height: 90vh;
+}
+
+@media (max-width: 1000px) {
+  .contact-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-container {
+    width: 70%;
+  }
+}
