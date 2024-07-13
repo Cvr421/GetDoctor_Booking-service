@@ -1,11 +1,18 @@
 
 // import HomeCircles from './component/HomeCircles';
 // import Navbar from './component/Navbar';
-import Dashboard  from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import { Home } from "./pages/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
-import { Public } from "./middleware/route";
+import { Admin, Protected, Public } from "./middleware/route";
+import Login from "./pages/Login";
+import Doctors from "./pages/Doctors";
+import Appointments from "./pages/Appointments";
+import Notifications from "./pages/Notifications";
+import ApplyDoctor from "./pages/ApplyDoctor";
+import Profile from "./pages/Profile";
+import Error from "./pages/Error";
 export default function App() {
   return (
     <>
@@ -15,13 +22,17 @@ export default function App() {
             path="/"
             element={<Home />}
           />
-           
-           <Route
+
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
             path="/register"
             element={
-              <Public>  
+              <Public>
                 <Register />
-               </Public>  
+              </Public>
             }
           />
 
@@ -29,11 +40,92 @@ export default function App() {
           <Route
             path="/dashboard/users"
             element={
-              // <Admin>   Open letter
+              <Admin>   
               <Dashboard type={"users"} />
-              // </Admin>
+              </Admin>
             }
           />
+
+
+
+          <Route
+            path="/doctors"
+            element={<Doctors />}
+          />
+          <Route
+            path="/appointments"
+            element={
+              <Protected>
+                <Appointments />
+              </Protected>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <Protected>
+                <Notifications />
+              </Protected>
+            }
+          />
+          <Route
+            path="/applyfordoctor"
+            element={
+              <Protected>
+                <ApplyDoctor />
+              </Protected>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Protected>
+                <Profile />
+              </Protected>
+            }
+          />
+          <Route
+            path="/dashboard/users"
+            element={
+              <Admin>
+                <Dashboard type={"users"} />
+              </Admin>
+            }
+          />
+          <Route
+            path="/dashboard/doctors"
+            element={
+              <Admin>
+                <Dashboard type={"doctors"} />
+              </Admin>
+            }
+          />
+          <Route
+            path="/dashboard/appointments"
+            element={
+              <Protected>
+                <Dashboard type={"appointments"} />
+              </Protected>
+            }
+          />
+          <Route
+            path="/dashboard/applications"
+            element={
+              <Protected>
+                <Dashboard type={"applications"} />
+              </Protected>
+            }
+          />
+          <Route
+            path="*"
+            element={<Error />}
+          />
+
+
+
+
+
+
         </Routes>
 
       </Router>
