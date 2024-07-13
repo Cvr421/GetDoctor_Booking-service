@@ -6,20 +6,19 @@ import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
-import "../styles/user.css";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-export default function AdminDoctors  ()  {
-  const [doctors, setDoctors] = useState([]);
+export default function  Users  ()  {
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
 
-  const getAllDoctors = async (e) => {
+  const getAllUsers = async (e) => {
     try {
       dispatch(setLoading(true));
-      const temp = await fetchData(`/doctor/getalldoctors`);
-      setDoctors(temp);
+      const temp = await fetchData(`/user/getallusers`);
+      setUsers(temp);
       dispatch(setLoading(false));
     } catch (error) {}
   };
@@ -29,22 +28,20 @@ export default function AdminDoctors  ()  {
       const confirm = window.confirm("Are you sure you want to delete?");
       if (confirm) {
         await toast.promise(
-          axios.put(
-            "/doctor/deletedoctor",
-            { userId },
-            {
-              headers: {
-                authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          ),
+          axios.delete("/user/deleteuser", {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            data: { userId },
+          }),
           {
-            success: "Doctor deleted successfully",
-            error: "Unable to delete Doctor",
-            loading: "Deleting Doctor...",
+            pending: "Deleting in...",
+            success: "User deleted successfully",
+            error: "Unable to delete user",
+            loading: "Deleting user...",
           }
         );
-        getAllDoctors();
+        getAllUsers();
       }
     } catch (error) {
       return error;
@@ -52,7 +49,7 @@ export default function AdminDoctors  ()  {
   };
 
   useEffect(() => {
-    getAllDoctors();
+    getAllUsers();
   }, []);
 
   return (
@@ -61,8 +58,8 @@ export default function AdminDoctors  ()  {
         <Loading />
       ) : (
         <section className="user-section">
-          <h3 className="home-sub-heading">All Doctors</h3>
-          {doctors.length > 0 ? (
+          <h3 className="home-sub-heading">All Users</h3>
+          {users.length > 0 ? (
             <div className="user-container">
               <table>
                 <thead>
@@ -73,36 +70,36 @@ export default function AdminDoctors  ()  {
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Mobile No.</th>
-                    <th>Experience</th>
-                    <th>Specialization</th>
-                    <th>Fees</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Is Doctor</th>
                     <th>Remove</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {doctors?.map((ele, i) => {
+                  {users?.map((ele, i) => {
                     return (
                       <tr key={ele?._id}>
                         <td>{i + 1}</td>
                         <td>
                           <img
                             className="user-table-pic"
-                            src={ele?.userId?.pic}
-                            alt={ele?.userId?.firstname}
+                            src={ele?.pic}
+                            alt={ele?.firstname}
                           />
                         </td>
-                        <td>{ele?.userId?.firstname}</td>
-                        <td>{ele?.userId?.lastname}</td>
-                        <td>{ele?.userId?.email}</td>
-                        <td>{ele?.userId?.mobile}</td>
-                        <td>{ele?.experience}</td>
-                        <td>{ele?.specialization}</td>
-                        <td>{ele?.fees}</td>
+                        <td>{ele?.firstname}</td>
+                        <td>{ele?.lastname}</td>
+                        <td>{ele?.email}</td>
+                        <td>{ele?.mobile}</td>
+                        <td>{ele?.age}</td>
+                        <td>{ele?.gender}</td>
+                        <td>{ele?.isDoctor ? "Yes" : "No"}</td>
                         <td className="select">
                           <button
                             className="btn user-btn"
                             onClick={() => {
-                              deleteUser(ele?.userId?._id);
+                              deleteUser(ele?._id);
                             }}
                           >
                             Remove
@@ -122,3 +119,4 @@ export default function AdminDoctors  ()  {
     </>
   );
 };
+
