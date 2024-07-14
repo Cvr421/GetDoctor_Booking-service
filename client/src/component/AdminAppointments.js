@@ -63,7 +63,7 @@ export default function AdminAppointments () {
         <Loading />
       ) : (
         <section className="user-section">
-          <h3 className="home-sub-heading">All Users</h3>
+          <h3 className="home-sub-heading">Patient Appointment</h3>
           {appointments.length > 0 ? (
             <div className="user-container">
               <table>
