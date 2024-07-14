@@ -1,8 +1,8 @@
 {
+  "homepage": "http://devwithcvr.me/GetDoctor_Booking-service/",
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Cvr421.github.io/GetDoctor_Booking-service",
   "dependencies": {
     "@cloudinary/react": "^1.13.0",
     "@cloudinary/url-gen": "^1.19.0",
@@ -27,15 +27,14 @@
     "toast": "^0.5.4",
     "web-vitals": "^2.1.4"
   },
-
- 
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": [
