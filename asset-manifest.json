@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GetDoctor_Booking-service/static/css/main.b24853e5.css",
-    "main.js": "/GetDoctor_Booking-service/static/js/main.cea2f203.js",
+    "main.js": "/GetDoctor_Booking-service/static/js/main.69c0782f.js",
     "static/css/817.892a1445.chunk.css": "/GetDoctor_Booking-service/static/css/817.892a1445.chunk.css",
     "static/js/817.3fb05ffe.chunk.js": "/GetDoctor_Booking-service/static/js/817.3fb05ffe.chunk.js",
     "static/css/499.13a920c0.chunk.css": "/GetDoctor_Booking-service/static/css/499.13a920c0.chunk.css",
@@ -26,7 +26,7 @@
     "static/media/heroimg.jpg": "/GetDoctor_Booking-service/static/media/heroimg.15423074197b156b641c.jpg",
     "index.html": "/GetDoctor_Booking-service/index.html",
     "main.b24853e5.css.map": "/GetDoctor_Booking-service/static/css/main.b24853e5.css.map",
-    "main.cea2f203.js.map": "/GetDoctor_Booking-service/static/js/main.cea2f203.js.map",
+    "main.69c0782f.js.map": "/GetDoctor_Booking-service/static/js/main.69c0782f.js.map",
     "817.892a1445.chunk.css.map": "/GetDoctor_Booking-service/static/css/817.892a1445.chunk.css.map",
     "817.3fb05ffe.chunk.js.map": "/GetDoctor_Booking-service/static/js/817.3fb05ffe.chunk.js.map",
     "499.13a920c0.chunk.css.map": "/GetDoctor_Booking-service/static/css/499.13a920c0.chunk.css.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.b24853e5.css",
-    "static/js/main.cea2f203.js"
+    "static/js/main.69c0782f.js"
   ]
 }
