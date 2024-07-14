@@ -9,7 +9,7 @@ import { setLoading } from "../redux/reducers/rootSlice";
 import Loading from "../component/Loading";
 import "../styles/user.css";
 
-export default  function Notifications  () {
+const Notifications  =()=> {
   const [notifications, setNotifications] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
@@ -71,3 +71,4 @@ export default  function Notifications  () {
   );
 };
 
+export default  Notifications ;

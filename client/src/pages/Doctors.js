@@ -9,8 +9,7 @@ import Loading from "../component/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/reducers/rootSlice";
 import Empty from "../component/Empty";
-
-export default function Doctors ()  {
+const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
@@ -55,3 +54,5 @@ export default function Doctors ()  {
 };
 
 
+
+export default Doctors;

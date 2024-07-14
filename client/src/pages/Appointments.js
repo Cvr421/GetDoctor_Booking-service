@@ -11,7 +11,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/user.css";
 
-export default function Appointments () {
+const  Appointments =() =>{
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
@@ -138,3 +138,4 @@ export default function Appointments () {
     </>
   );
 };
+export default Appointments;

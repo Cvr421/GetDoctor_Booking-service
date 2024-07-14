@@ -10,7 +10,7 @@ import fetchData from "../helper/apiCall";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-export default  function Login() {
+const Login =() =>{
   const dispatch = useDispatch();
   const [formDetails, setFormDetails] = useState({
     email: "",
@@ -111,3 +111,4 @@ export default  function Login() {
   );
 }
 
+export default Login ;

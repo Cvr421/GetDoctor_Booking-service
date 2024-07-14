@@ -10,7 +10,7 @@ import { jwtDecode } from 'jwt-decode';
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-export default  function Profile() {
+ const Profile=() =>{
   const { userId } = jwtDecode(localStorage.getItem("token"));
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
@@ -229,3 +229,4 @@ export default  function Profile() {
   );
 }
 
+export default Profile;

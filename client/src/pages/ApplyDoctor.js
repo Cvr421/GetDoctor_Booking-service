@@ -9,7 +9,7 @@ import Footer from "../component/Footer";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-export default function ApplyDoctor  () {
+const ApplyDoctor = () =>{
   const navigate = useNavigate();
   const [formDetails, setFormDetails] = useState({
     specialization: "",
@@ -102,4 +102,4 @@ export default function ApplyDoctor  () {
   );
 };
 
- 
+export default   ApplyDoctor;

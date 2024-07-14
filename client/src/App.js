@@ -1,28 +1,27 @@
-
-// import HomeCircles from './component/HomeCircles';
-// import Navbar from './component/Navbar';
-import Dashboard from "./pages/Dashboard";
-import { Home } from "./pages/Home";
+import "./styles/app.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "./pages/Register";
-import { Admin, Protected, Public } from "./middleware/route";
 import Login from "./pages/Login";
-import Doctors from "./pages/Doctors";
-import Appointments from "./pages/Appointments";
-import Notifications from "./pages/Notifications";
-import ApplyDoctor from "./pages/ApplyDoctor";
-import Profile from "./pages/Profile";
-import Error from "./pages/Error";
-export default function App() {
-  return (
-    <>
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+import Register from "./pages/Register";
+import { Toaster } from "react-hot-toast";
+import { Protected, Public, Admin } from "./middleware/route";
+import React, { lazy, Suspense } from "react";
+import Loading from "./component/Loading";
 
+const Home = lazy(() => import("./pages/Home"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Appointments = lazy(() => import("./pages/Appointments"));
+const Doctors = lazy(() => import("./pages/Doctors"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Notifications = lazy(() => import("./pages/Notifications"));
+const ApplyDoctor = lazy(() => import("./pages/ApplyDoctor"));
+const Error = lazy(() => import("./pages/Error"));
+
+function App() {
+  return (
+    <Router>
+      <Toaster />
+      <Suspense fallback={<Loading />}>
+        <Routes>
           <Route
             path="/login"
             element={<Login />}
@@ -35,19 +34,10 @@ export default function App() {
               </Public>
             }
           />
-
-
           <Route
-            path="/dashboard/users"
-            element={
-              <Admin>   
-              <Dashboard type={"users"} />
-              </Admin>
-            }
+            path="/"
+            element={<Home />}
           />
-
-
-
           <Route
             path="/doctors"
             element={<Doctors />}
@@ -120,17 +110,10 @@ export default function App() {
             path="*"
             element={<Error />}
           />
-
-
-
-
-
-
         </Routes>
-
-      </Router>
-    </>
+      </Suspense>
+    </Router>
   );
 }
 
-
+export default App;

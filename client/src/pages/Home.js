@@ -6,7 +6,7 @@ import Hero from "../component/Hero";
 import Navbar from "../component/Navbar";
 import HomeCircles from "../component/HomeCircles";
 
-export function Home(){
+const Home =() => {
   return (
     <>
       <Navbar />
@@ -19,3 +19,4 @@ export function Home(){
   );
 };
 
+export default Home;

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/error.css";
 
-export default function Error  ()  {
+const Error = () => {
   return (
     <div className="error container">
       <h2>Error! Page Not Found</h2>
@@ -16,3 +16,4 @@ export default function Error  ()  {
   );
 };
 
+export default Error;

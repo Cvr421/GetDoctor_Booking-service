@@ -5,7 +5,7 @@ import AdminDoctors from "../component/AdminDoctors";
 import Sidebar from "../component/Sidebar";
 import Users from "../component/Users";
 
-export default function Dashboard  (props)  {
+const  Dashboard = (props)=>  {
   const { type } = props;
   return (
     <>
@@ -29,3 +29,4 @@ export default function Dashboard  (props)  {
   );
 };
 
+export default Dashboard ;

@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-export default function Register() {
+ const  Register =()=> {
   const [file, setFile] = useState("");
   const [loading, setLoading] = useState(false);
   const [formDetails, setFormDetails] = useState({
@@ -33,13 +33,38 @@ export default function Register() {
       data.append("file", element);
       data.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET);
       data.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
-      fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
-        method: "POST",
-        body: data,
-      })
-        .then((res) => res.json())
-        .then((data) => setFile(data.url.toString()));
-      setLoading(false);
+
+    
+      try {
+        const res = await fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
+          method: "POST",
+          body: data,
+        });
+        const responseData = await res.json();
+
+        if (!res.ok) {
+          console.error("Upload failed:", responseData);
+          throw new Error(responseData.error.message || "Upload failed");
+        }
+
+        setFile(responseData.url.toString());
+        toast.success("Image uploaded successfully");
+      } catch (error) {
+        console.error("Upload error:", error);
+        toast.error("Upload error: " + error.message);
+      } finally {
+        setLoading(false);
+      }
+
+
+      
+      // fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
+      //   method: "POST",
+      //   body: data,
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => setFile(data.url.toString()));
+      // setLoading(false);
     } else {
       setLoading(false);
       toast.error("Please select an image in jpeg or png format");
@@ -82,6 +107,10 @@ export default function Register() {
           loading: "Registering user...",
         }
       );
+      // console.log(process.env.REACT_APP_CLOUDINARY_PRESET);
+      //  console.log(process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
+      // console.log(process.env.REACT_APP_CLOUDINARY_BASE_URL);
+
       return navigate("/login");
     } catch (error) {}
   };
@@ -163,3 +192,4 @@ export default function Register() {
   );
 }
 
+export default Register ;
