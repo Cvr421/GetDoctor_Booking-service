@@ -120,31 +120,31 @@ npm start
 
 ### Home page
 
-<img src="./client/src/images/full_pic.png" alt='home'/>
+<img src="./client/src/images/Home.png" alt='home'/>
 
 ### Sign up page
 
-<img src="./client/src/images/signup.png" alt='signup'/>
+<img src="./client/src/images/SignUp.png" alt='signup'/>
 
 ### Sign in page
 
-<img src="./client/src/images/signin.png" alt='signin'/>
+<img src="./client/src/images/signIN.png" alt='signin'/>
 
 ### Profile page
 
-<img src="./client/src/images/profile.png" alt='profile'/>
+<img src="./client/src/images/Profile.png" alt='profile'/>
 
 ### All Doctors page
 
-<img src="./client/src/images/doctors.png" alt='doctors'/>
+<img src="./client/src/images/ourDoc.png" alt='doctors'/>
 
 ### Apply for doctor page
 
-<img src="./client/src/images/docapply.png" alt='applyfordoctor'/>
+<img src="./client/src/images/applydoc.png" alt='applyfordoctor'/>
 
 ### Admin all users dashboard
 
-<img src="./client/src/images/users.png" alt='users'/>
+<img src="./client/src/images/allusers.png" alt='users'/>
 
 ### Admin all applications page
 
@@ -156,7 +156,7 @@ npm start
 
 ### Users all appointments page
 
-<img src="./client/src/images/userappointments.png" alt='appointments'/>
+<img src="./client/src/images/appointment.png.png" alt='appointments'/>
 
 ### Doctors all appointments page
 
