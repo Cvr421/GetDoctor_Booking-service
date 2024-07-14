@@ -136,7 +136,7 @@ npm start
 
 ### All Doctors page
 
-<img src="./client/src/images/ourDoc.png" alt='doctors'/>
+<img src="./client/src/images/AllDoctors.png" alt='doctors'/>
 
 ### Apply for doctor page
 
@@ -152,7 +152,7 @@ npm start
 
 ### Book Appointment page
 
-<img src="./client/src/images/bookappointment.png" alt='bookappointment'/>
+<img src="./client/src/images/bookappointment.png" alt='BookingAppointment.png'/>
 
 ### Users all appointments page
 
