@@ -146,23 +146,15 @@ npm start
 
 <img src="./client/src/images/allusers.png" alt='users'/>
 
-### Admin all applications page
-
-<img src="./client/src/images/applications.png" alt='applications'/>
-
 ### Book Appointment page
 
-<img src="./client/src/images/bookappointment.png" alt='BookingAppointment.png'/>
-
-
+<img src="./client/src/images/BookingAppointment.png" alt='BookingAppointment.png'/>
 
 ### Doctors all application page
 
 <img src="./client/src/images/appDoc.png" alt='appointments'/>
 
-### Notifications page
 
-<img src="./client/src/images/notifications.png" alt='notifications'/>
 
 ---
 
