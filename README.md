@@ -154,13 +154,11 @@ npm start
 
 <img src="./client/src/images/bookappointment.png" alt='BookingAppointment.png'/>
 
-### Users all appointments page
 
-<img src="./client/src/images/appointment.png.png" alt='appointments'/>
 
-### Doctors all appointments page
+### Doctors all application page
 
-<img src="./client/src/images/doctorappointments.png" alt='appointments'/>
+<img src="./client/src/images/appDoc.png" alt='appointments'/>
 
 ### Notifications page
 
